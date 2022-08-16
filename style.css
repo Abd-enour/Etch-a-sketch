@@ -47,10 +47,10 @@
     display: flex;
     justify-content: center;
 }
-.squar{
+.row,.colm{
     border: 2px solid rgb(0, 21, 255);
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     margin: 1px;
     text-align: center;
     font-size: 20px;
