@@ -1,5 +1,7 @@
 function createGrid() {
-    let body =document.getElementsByTagName("body")[0].children;
+    let body =document.getElementsByTagName("body");
+    // let hh= body.children;
+    // if(hh[1]!= undefined){hh[1].remove();}
     let container=document.createElement("div");
     container.setAttribute("id","container");
     let input=document.getElementById("nbr-square").value;
