@@ -3,70 +3,70 @@
     padding: 0px;
     box-sizing: content-box;
     background-color: rgb(187, 214, 118);
-
 }
 
-
-#user-input{
-    width: 100%;
-    max-width: 600px;
-    font-weight: 600;
-    padding: 15px;
-    margin: 50px auto;
-}
-#user-input label{
-    font-size: 24px;
-    height: 35px;
-}
-#user-input input{
-    display: block;
-    width: 150px;
-    height: 30px;
-    border-radius: 8px;
-    background-color: white;
-    font-size: 26px;
-    padding: 10px;
+/* -------- styling the header ---------------- */
+#header{
+    font-size: 30pt;
     text-align: center;
-    margin: 10px auto;
+    letter-spacing: 1.5px;
+    margin: 5px auto;
 }
-#user-input button{
-    display: block;
-    background-color: aqua;
+#header h1{
+    display: flex;
+    font-weight: 900;
+    justify-content: center;
+    align-items: center;
+
+}
+/* ---------------- styling the main container ------------- */
+#main{
+    border: dashed 3px darkblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+/* --------------- the side container --------------------- */
+#side-container{
     width: 300px;
-    height: 35px;
-    font-size: 22px;
-    padding: 5px;
-    border-radius: 15px;
-    margin: 10px auto;
-    letter-spacing: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
+.inp{
+    display: block;
+    margin: 5px;
+    background-color: rgb(246, 0, 246);
+    width: 150px;
+    height: 55px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
     cursor: pointer;
 }
-#container{
-    margin: 10px auto;
-    display: flex;
-    justify-content: center;
+.inp:hover{
+    transform: scale(1.05);
+    transition: transform 0.1s ease-in-out;
 }
-.row,.colm{
-    border: 2px solid rgb(0, 21, 255);
-    width: 16px;
-    height: 16px;
-    margin: 1px;
-    text-align: center;
-    font-size: 14px;
-}
-
 input[type="color"]{
-    width: 80px;
-    height: 80px;
-    -webkit-appearance:none;
-    -moz-appearance: none;
-    appearance: none;
     width: 100px;
     height: 100px;
     border: none;
-    cursor: pointer;
 }
 input[type="color"]::-webkit-color-swatch{
     border-radius: 50%;
     border: 7px solid black;
+}
+/* --------------- the Second container aka the Grid container ----------------- */
+
+#right-container{
+    border: 2px solid rgb(253, 0, 0);
+    width: 500px;
 }
