@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch A Sketch</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/3d7ad65c26.js" crossorigin="anonymous"></script>
     <script src="dom.js" defer></script>
 </head>
 <body>
@@ -13,7 +14,8 @@
   <main id="main">
     <div id="side-container">
       <input type="color" class="inp">
-      <input type="range" class="inp">
+      <span id="range">16 x 16</span>
+      <input type="range"  min="1" max="64" value="16">
       <input type="button" class="inp" value="Color Mode">
       <input type="button" class="inp" value="Rainbow Mode">
       <input type="button" class="inp" value="Eraser">
@@ -23,5 +25,11 @@
 
     </div>
   </main>
+  <footer>
+    Copyright&copy;2022 Abd-enour  
+    <a href="https://github.com/Abd-enour" target="_blank">
+      <i class="fa-brands fa-github" id="github-logo"></i>
+    </a>
+  </footer>
 </body>
 </html>
