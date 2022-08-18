@@ -70,9 +70,9 @@ input[type="color"]::-webkit-color-swatch{
 input[type="color"]:focus{
     background-color: transparent;
 }
-#range{
+#span-range{
     font-size: 24px;
-    margin: 20px auto 0px auto;
+    margin: 20px auto 5px auto;
 }
 input[type="range"]{
     margin-bottom: 20px;
