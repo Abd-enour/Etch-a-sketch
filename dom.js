@@ -1,27 +1,37 @@
 let color =document.getElementsByClassName("inp")[0];
 console.log(color.value);
 
-let span=document.getElementById("span-range").textContent;
-console.log(span);
 
 let range=document.getElementsByTagName("input")[1];
-console.log(range.value);
+range.addEventListener("click", ()=>{
+    let span=document.getElementById("span-range").textContent=`${range.value} x ${range.value}`;
+    let rightContainer=document.getElementById("right-container");
+    rightContainer.style.gridTemplateColumns=`repeat(${range.value},1fr)`;
+    rightContainer.style.gridTemplateRows=`repeat(${range.value},1fr)`;
+    for (let i = range.value; i>0; i-) {
+        let div
+        
+    }
+});
 
-function colorMode() {
-    
-}
+let rightContainer=document.getElementById("right-container");
 
+let colorMode=document.getElementsByClassName("inp")[1];
+colorMode.addEventListener("click",()=>{
+    colorMode.setAttribute("class","fo inp");
+});
 
-function rainbowMode() {
-    
-}
+let rainbowMode=document.getElementsByClassName("inp")[2];
+rainbowMode.addEventListener("click",()=>{
+    rainbowMode.setAttribute("class","fo inp");
+});
 
+let eraser=document.getElementsByClassName("inp")[3];
+eraser.addEventListener("click",()=>{
+    eraser.setAttribute("class","fo inp");
+});
 
-
-function eraser() {
-    
-}
-
-function clear() {
-    
-}
+let clear=document.getElementsByClassName("inp")[4];
+clear.addEventListener("click",()=>{
+    clear.setAttribute("class","fo inp");
+});
