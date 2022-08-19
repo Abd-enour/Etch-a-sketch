@@ -100,7 +100,7 @@ input[type=range]::-webkit-slider-runnable-track {
   }
 /* --------------- the Second container aka the Grid container ----------------- */
 
-#right-container{
+.grid{
     max-width: 500px;
     width: 500px;
     max-height: 500px;
@@ -139,4 +139,12 @@ footer >a{
 .fo:focus{
     background-color: #414141;
     color: #ffffff;
+}
+.fo:active{
+    background-color: #414141;
+    color: #ffffff;
+}
+
+.grid-cells{
+    background-color: inherit;
 }
