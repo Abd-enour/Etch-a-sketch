@@ -41,7 +41,7 @@
     justify-content: center;
     align-items: center;
 }
-.inp{
+button{
     display: block;
     margin: 10px 5px;
     background-color: rgb(219, 219, 219);
@@ -54,9 +54,13 @@
     letter-spacing: 1.5px;
     cursor: pointer;
 }
-.inp:hover{
+button:hover{
     transform: scale(1.05);
     transition: transform 0.1s ease-in-out;
+}
+button.active{
+    background-color: #414141;
+    color: #ffffff;
 }
 input[type="color"]{
     width: 100px;
@@ -136,15 +140,6 @@ footer >a{
     transform: rotate(360deg);
     
 }
-.fo:focus{
-    background-color: #414141;
-    color: #ffffff;
-}
-.fo:active{
-    background-color: #414141;
-    color: #ffffff;
-}
-
 .grid-cells{
     background-color: inherit;
 }

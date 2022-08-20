@@ -1,5 +1,6 @@
 let rightContainer=document.querySelector(".grid");
 let range=document.getElementsByTagName("input")[1];
+let color =document.getElementById("inp-color");
 
 // the createDiv(nbr) function creates X*X grid dependding on the user choice.
 createDiv(16);
@@ -24,7 +25,6 @@ function setToDefault() {
 range.addEventListener("click", ()=>{
     setToDefault();    
     createDiv(range.value);
-    let color =document.getElementsByClassName("inp")[0];  
     /*  i think the code below is repeating .
         so i need to put it inside a function.
         i will do this next time inchllh. 
@@ -38,10 +38,8 @@ range.addEventListener("click", ()=>{
     // end of the repeating code. :)
 });
 
-let colorMode=document.getElementsByClassName("inp")[1];
+let colorMode=document.getElementsByTagName("button")[0];
 colorMode.addEventListener("click",()=>{
-    colorMode.setAttribute("class","fo inp");
-    let color =document.getElementsByClassName("inp")[0];
     let gridCells=document.getElementsByClassName("grid-cells");
     Array.from(gridCells).forEach((item)=>{
         item.addEventListener("click", ()=>{
@@ -51,20 +49,17 @@ colorMode.addEventListener("click",()=>{
 
 });
 
-
-
-
-let rainbowMode=document.getElementsByClassName("inp")[2];
+let rainbowMode=document.getElementsByTagName("button")[1];
 rainbowMode.addEventListener("click",()=>{
-    rainbowMode.setAttribute("class","fo inp");
+    
 });
 
-let eraser=document.getElementsByClassName("inp")[3];
+let eraser=document.getElementsByTagName("button")[2];
 eraser.addEventListener("click",()=>{
-    eraser.setAttribute("class","fo inp");
+    eraser.classList.toggle("active");
 });
 
-let clear=document.getElementsByClassName("inp")[4];
+let clear=document.getElementsByTagName("button")[3];
 clear.addEventListener("click",()=>{
-    clear.setAttribute("class","fo inp");
+    setToDefault();
 });
