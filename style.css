@@ -115,7 +115,9 @@ input[type=range]::-webkit-slider-runnable-track {
     grid-template-columns: repeat(16,1fr);
     grid-template-rows: repeat(16,1fr);
 }
-
+.grid-cells{
+    border: 0.1px dashed lightgray;
+}
 /* --------------- styling the footer --------------------- */
 
 footer{
