@@ -2,29 +2,25 @@ let rightContainer=document.querySelector(".grid");
 let range=document.getElementsByTagName("input")[1];
 let color =document.getElementById("inp-color");
 let gridCells=document.getElementsByClassName("grid-cells");
+let span=document.getElementById("span-range");
 
 gridEventColor(color)
 createDiv(16);
 // the createDiv(nbr) function creates nbr*nbr grid dependding on the user choice.
 function createDiv(nbr){
+    rightContainer.innerHTML="";
+    span.textContent=`${nbr} x ${nbr}`;
+    rightContainer.style.gridTemplateColumns=`repeat(${nbr},1fr)`;
+    rightContainer.style.gridTemplateRows=`repeat(${nbr},1fr)`;
     for (let i = Math.pow(nbr,2); i>0; i--) {
         let div=document.createElement("div");
         div.setAttribute("class","grid-cells");
         rightContainer.appendChild(div);
     }
+    
 }
 // end of createDiv() function.
-
-// the setToDefault() function sets the grid to a 16x16 grid
-function setToDefault() {
-    rightContainer.innerHTML="";
-    let span=document.getElementById("span-range").textContent=`${range.value} x ${range.value}`;
-    rightContainer.style.gridTemplateColumns=`repeat(${range.value},1fr)`;
-    rightContainer.style.gridTemplateRows=`repeat(${range.value},1fr)`;
-}
-// end of the setToDefualt() function
 range.addEventListener("click", ()=>{
-    setToDefault();    
     createDiv(range.value);
     gridEventColor(color)
 });
@@ -60,8 +56,8 @@ eraser.addEventListener("click",()=>{
 
 let clear=document.getElementsByTagName("button")[3];
 clear.addEventListener("click",()=>{
-    setToDefault();
-    createDiv(16);
+    createDiv(range.value);
+    gridEventColor(color);
 });
 
 function gridEventColor(backgroundColor){
