@@ -58,7 +58,7 @@ button:hover{
     transform: scale(1.05);
     transition: transform 0.1s ease-in-out;
 }
-button.active{
+.active{
     background-color: #414141;
     color: #ffffff;
 }
@@ -115,7 +115,7 @@ input[type=range]::-webkit-slider-runnable-track {
     grid-template-columns: repeat(16,1fr);
     grid-template-rows: repeat(16,1fr);
 }
-.grid-cells{
+.show-grid{
     border: 0.1px dashed lightgray;
 }
 /* --------------- styling the footer --------------------- */

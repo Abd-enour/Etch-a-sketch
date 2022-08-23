@@ -12,6 +12,7 @@ let gridCells=document.getElementsByClassName("grid-cells");
 let color =document.getElementById("inp-color");
 let span=document.getElementById("span-range");
 let range=document.getElementById("range");
+let showGrid=document.getElementById("show-grid");
 let colorMode=document.getElementById("color-btn");
 let rainbowMode=document.getElementById("rainbow-btn");
 let eraser=document.getElementById("eraser-btn");
@@ -32,10 +33,14 @@ rainbowMode.onclick=()=>setCurentMode("rainbow");
 eraser.onclick=()=>setCurentMode("eraser");
 range.onmousemove=(e)=>setCurentSize(e.target.value);
 range.onclick=(e)=>updateCurentSize(e.target.value);
-clear.onclick=()=>
+showGrid.onclick=()=>{showGrid.classList.toggle("active");displayGrid()}
 
-function updateCurentSize(){
-    createDiv(curentSize)
+function updateCurentSize(newSize){
+    setCurentSize(newSize);
+    createDiv(curentSize);
+    if(showGrid.classList.contains("active")){
+        displayGrid();
+    }
 }
 
 let mouseDown=false;
@@ -61,9 +66,18 @@ function setCurentMode(newMode) {
     curentMode=newMode;
 }
 clear.addEventListener("click",()=>{
-    createDiv(range.value);
-    changeColor();
+let i=0;
+let timerId=setInterval(() => {
+    if(gridCells.length-i===0){
+           return clearInterval(timerId);
+    }else{
+        gridCells[i].style.backgroundColor="white";
+        i++;   
+    }
+}, 4);
+   
 });
+
 
 
 
@@ -99,4 +113,10 @@ function activateBtn(newMode){
     }
 }
 
+function displayGrid() {
+    Array.from(gridCells).forEach((item)=>{
+                item.classList.toggle("show-grid");
+    }
+        )
+}
 window.onload=()=>createDiv(16)
