@@ -17,20 +17,22 @@ let rainbowMode=document.getElementById("rainbow-btn");
 let eraser=document.getElementById("eraser-btn");
 let clear=document.getElementById("clear-btn");
 
+function setCurentColor(newColor) {
+    curentColor=newColor;
+}
+
 function setCurentSize(newSize) {
     curentSize=newSize;
     span.textContent=`${range.value} x ${range.value}`;
 }
 
-function setCurentColor(newColor) {
-    curentColor=newColor;
-}
 color.oninput=(e)=>setCurentColor(e.target.value);
 colorMode.onclick=()=>setCurentMode("color");
 rainbowMode.onclick=()=>setCurentMode("rainbow");
 eraser.onclick=()=>setCurentMode("eraser");
 range.onmousemove=(e)=>setCurentSize(e.target.value);
 range.onclick=(e)=>updateCurentSize(e.target.value);
+clear.onclick=()=>
 
 function updateCurentSize(){
     createDiv(curentSize)
@@ -60,15 +62,10 @@ function setCurentMode(newMode) {
 }
 clear.addEventListener("click",()=>{
     createDiv(range.value);
-    gridEventColor(color);
+    changeColor();
 });
 
-function gridEventColor(backgroundColor){
-Array.from(gridCells).forEach((item)=>{
-    item.addEventListener("click", ()=>{
-        item.style=`background-color:${backgroundColor.value}`;
-   });
-});}
+
 
 function changeColor(evt) {
     if (evt.type ==="mouseover" && !mouseDown) return
